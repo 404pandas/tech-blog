@@ -1,0 +1,68 @@
+/* ****************************** */
+/*       Universal selector       */
+/* ****************************** */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ****************************** */
+/*        Color selectors         */
+/* ****************************** */
+
+:root {
+--variableName: #000000;
+}
+
+/* ****************************** */
+/*       Element selectors        */
+/* ****************************** */
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}
+
+/* ****************************** */
+/*        Class selectors         */
+/* ****************************** */
+
+/* ****************************** */
+/*          ID selectors          */
+/* ****************************** */
+
+/* ****************************** */
+/* Formatting for media inquiries */
+/* ****************************** */
+
+/* Laptop */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* iPads and Tablets */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+
+}
+
+
+
