@@ -1,5 +1,3 @@
-// Form handler, query selector, and event listener for logging in
-
 async function loginFormHandler(event) {
     event.preventDefault();
   
