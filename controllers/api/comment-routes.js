@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const { response } = require("express");
 const { Comment } = require("../../models");
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
 router.get("/",
-// withAuth,
+withAuth,
  (req, res) => {
   Comment.findAll()
     .then((dbCommentData) => res.json(dbCommentData))
@@ -15,7 +15,7 @@ router.get("/",
 });
 
 router.post("/",
-// withAuth,
+withAuth,
  (req, res) => {
   if (req.session) {
     Comment.create({
@@ -32,7 +32,7 @@ router.post("/",
 });
 
 router.delete("/:id",
-// withAuth,
+withAuth,
  (req, res) => {
   Comment.destroy({
     where: {

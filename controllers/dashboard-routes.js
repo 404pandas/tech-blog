@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
-// const withAuth = require("../utils/auth");
+const withAuth = require("../utils/auth");
 
 // get all posts for dashboard
 router.get("/",
-// withAuth,
+withAuth,
  (req, res) => {
   Post.findAll({
     where: {
@@ -42,7 +42,7 @@ router.get("/",
 });
 
 router.get("/edit/:id",
-// withAuth, 
+withAuth, 
 (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: ["id", "post_text", "title", "created_at"],
