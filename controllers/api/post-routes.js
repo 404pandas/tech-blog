@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Comment } = require("../../models");
-const withAuth = require("../../utils/auth");
+// const withAuth = require("../../utils/auth");
 
 // get all users
-router.get("/", withAuth, (req, res) => {
+router.get("/", 
+// withAuth,
+ (req, res) => {
   Post.findAll({
     attributes: ["id", "post_text", "title", "created_at"],
     include: [
@@ -29,8 +31,9 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-// withAuth deleted for insomnia functionality
-router.get("/:id", withAuth, (req, res) => {
+router.get("/:id", 
+// withAuth,
+ (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -64,8 +67,9 @@ router.get("/:id", withAuth, (req, res) => {
     });
 });
 
-router.post("/", withAuth, (req, res) => {
-  // expects {title: 'Tech blog goes public!', post_text: 'random string', user_id: 1}
+router.post("/", 
+// withAuth,
+ (req, res) => {
   Post.create({
     title: req.body.title,
     post_text: req.body.post_text,
@@ -78,8 +82,9 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-// withAuth deleted for insomnia functionality
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", 
+// withAuth,
+ (req, res) => {
   Post.update(
     {
       title: req.body.title,
@@ -104,7 +109,9 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/:id", 
+// withAuth,
+ (req, res) => {
   console.log("id", req.params.id);
   Post.destroy({
     where: {

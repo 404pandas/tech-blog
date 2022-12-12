@@ -1,6 +1,6 @@
 const { Post } = require('../models');
 
-const postData = [
+const postdata = [
   {
     title: 'Enlighten yourself',
     post_text: 'Calling somebody else fat won\'t make you any skinnier. Calling someone stupid doesn\'t make you any smarter. And ruining Regina George\'s life definitely didn\'t make me any happier. All you can do in life is try to solve the problem in front of you.',
@@ -43,6 +43,6 @@ const postData = [
   }
 ];
 
-const seedPosts = () => Post.bulkCreate(postData);
+const seedPosts = () => Post.bulkCreate(postdata);
 
 module.exports = seedPosts;
